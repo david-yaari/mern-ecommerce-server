@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node@12/12.18.3/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js build
+  /usr/local/Cellar/node@12/12.18.3/bin/node /usr/local/Cellar/yarn/1.22.5/libexec/bin/yarn.js start
 
 PATH: 
   /Users/davidyaari/.composer/vendor/bin:/Users/davidyaari/.pyenv/bin:/usr/local/opt/node@12/bin:/usr/local/mysql/bin:/Users/davidyaari/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/opt/anaconda3/bin:/opt/anaconda3/condabin:/Users/davidyaari/.composer/vendor/bin:/Users/davidyaari/.pyenv/bin:/usr/local/opt/node@12/bin:/usr/local/mysql/bin:/Users/davidyaari/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/bin:/Users/davidyaari/Library/Android/sdk/emulator:/Users/davidyaari/Library/Android/sdk/tools:/Users/davidyaari/Library/Android/sdk/tools/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/bin:/Users/davidyaari/Library/Android/sdk/emulator:/Users/davidyaari/Library/Android/sdk/tools:/Users/davidyaari/Library/Android/sdk/tools/bin:/usr/local/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/davidyaari/Azure DevOps/tutorials/fullstack-typescript-mern-todo/server/package.json: Unexpected string in JSON at position 193
+  SyntaxError: /Users/davidyaari/Azure DevOps/tutorials/fullstack-typescript-mern-todo/server/package.json: Unexpected token / in JSON at position 125
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.5/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -29,9 +29,11 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "build": "tsc",
-      "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
-    }
+      // "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
+      "start": "tsc"
+    },
     "dependencies": {
+      "body-parser": "^1.19.0",
       "cors": "^2.8.5",
       "express": "^4.17.1",
       "mongoose": "^5.10.9",
@@ -239,7 +241,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
     integrity sha512-MKiLiV+I1AA596t9w1sQJ8jkiSr5+ZKi0WKrYGUn6d1Fx+Ij4tIj+m2WMQSGczs5jZVxV339chE8iwk6F64wjA==
   
-  body-parser@1.19.0:
+  body-parser@1.19.0, body-parser@^1.19.0:
     version "1.19.0"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
     integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
